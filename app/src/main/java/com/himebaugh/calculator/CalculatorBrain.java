@@ -64,55 +64,52 @@ public class CalculatorBrain {
 
     protected double performOperation(String operator) {
 
-        /*
-        * If you are using Java 7, then you can use switch in place of if statements
-        *
-        *     switch (operator) {
-        *     case CLEARMEMORY:
-        *         calculatorMemory = 0;
-        *         break;
-        *     case ADDTOMEMORY:
-        *         calculatorMemory = calculatorMemory + operand;
-        *         break;
-        *     etc...
-        *     }
-        */
-
-        if (operator.equals(CLEAR)) {
-            mOperand = 0;
-            mWaitingOperator = "";
-            mWaitingOperand = 0;
-            // mCalculatorMemory = 0;
-        } else if (operator.equals(CLEARMEMORY)) {
-            mCalculatorMemory = 0;
-        } else if (operator.equals(ADDTOMEMORY)) {
-            mCalculatorMemory = mCalculatorMemory + mOperand;
-        } else if (operator.equals(SUBTRACTFROMMEMORY)) {
-            mCalculatorMemory = mCalculatorMemory - mOperand;
-        } else if (operator.equals(RECALLMEMORY)) {
-            mOperand = mCalculatorMemory;
-        } else if (operator.equals(SQUAREROOT)) {
-            mOperand = Math.sqrt(mOperand);
-
-        } else if (operator.equals(SQUARED)) {
-            mOperand = mOperand * mOperand;
-
-        } else if (operator.equals(INVERT)) {
-            if (mOperand != 0) {
-                mOperand = 1 / mOperand;
-            }
-        } else if (operator.equals(TOGGLESIGN)) {
-            mOperand = -mOperand;
-        } else if (operator.equals(SINE)) {
-            mOperand = Math.sin(Math.toRadians(mOperand)); // Math.toRadians(mOperand) converts result to degrees
-        } else if (operator.equals(COSINE)) {
-            mOperand = Math.cos(Math.toRadians(mOperand)); // Math.toRadians(mOperand) converts result to degrees
-        } else if (operator.equals(TANGENT)) {
-            mOperand = Math.tan(Math.toRadians(mOperand)); // Math.toRadians(mOperand) converts result to degrees
-        } else {
-            performWaitingOperation();
-            mWaitingOperator = operator;
-            mWaitingOperand = mOperand;
+        switch (operator) {
+            case CLEAR:
+                mOperand = 0;
+                mWaitingOperator = "";
+                mWaitingOperand = 0;
+                break;
+            case CLEARMEMORY:
+                mCalculatorMemory = 0;
+                break;
+            case ADDTOMEMORY:
+                mCalculatorMemory = mCalculatorMemory + mOperand;
+                break;
+            case SUBTRACTFROMMEMORY:
+                mCalculatorMemory = mCalculatorMemory - mOperand;
+                break;
+            case RECALLMEMORY:
+                mOperand = mCalculatorMemory;
+                break;
+            case SQUAREROOT:
+                mOperand = Math.sqrt(mOperand);
+                break;
+            case SQUARED:
+                mOperand = mOperand * mOperand;
+                break;
+            case INVERT:
+                if (mOperand != 0) {
+                    mOperand = 1 / mOperand;
+                }
+                break;
+            case TOGGLESIGN:
+                mOperand = -mOperand;
+                break;
+            case SINE:
+                mOperand = Math.sin(Math.toRadians(mOperand)); // Math.toRadians(mOperand) converts result to degrees
+                break;
+            case COSINE:
+                mOperand = Math.cos(Math.toRadians(mOperand)); // Math.toRadians(mOperand) converts result to degrees
+                break;
+            case TANGENT:
+                mOperand = Math.tan(Math.toRadians(mOperand)); // Math.toRadians(mOperand) converts result to degrees
+                break;
+            default:
+                performWaitingOperation();
+                mWaitingOperator = operator;
+                mWaitingOperand = mOperand;
+                break;
         }
 
         return mOperand;
@@ -120,16 +117,21 @@ public class CalculatorBrain {
 
     protected void performWaitingOperation() {
 
-        if (mWaitingOperator.equals(ADD)) {
-            mOperand = mWaitingOperand + mOperand;
-        } else if (mWaitingOperator.equals(SUBTRACT)) {
-            mOperand = mWaitingOperand - mOperand;
-        } else if (mWaitingOperator.equals(MULTIPLY)) {
-            mOperand = mWaitingOperand * mOperand;
-        } else if (mWaitingOperator.equals(DIVIDE)) {
-            if (mOperand != 0) {
-                mOperand = mWaitingOperand / mOperand;
-            }
+        switch (mWaitingOperator) {
+            case ADD:
+                mOperand = mWaitingOperand + mOperand;
+                break;
+            case SUBTRACT:
+                mOperand = mWaitingOperand - mOperand;
+                break;
+            case MULTIPLY:
+                mOperand = mWaitingOperand * mOperand;
+                break;
+            case DIVIDE:
+                if (mOperand != 0) {
+                    mOperand = mWaitingOperand / mOperand;
+                }
+                break;
         }
 
     }
