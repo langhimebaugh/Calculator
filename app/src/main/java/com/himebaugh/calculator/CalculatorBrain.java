@@ -28,7 +28,6 @@ public class CalculatorBrain {
     public static final String SINE = "sin";
     public static final String COSINE = "cos";
     public static final String TANGENT = "tan";
-
     // public static final String EQUALS = "=";
 
     // constructor
