@@ -1,267 +1,242 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/functionPad"
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:orientation="vertical"
+    android:background="#000000"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin">
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.himebaugh.calculator.MainActivity">
 
-    <LinearLayout
-        android:id="@+id/row1"
+    <TextView
+        android:id="@+id/textViewDisplay"
+        style="@style/DisplayStyle"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".12">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tableLayout1"
+        android:text="0"/>
 
-        <TextView
-            android:id="@+id/textView1"
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="right"
-            android:maxLines="1"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:text="0"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="40sp"/>
-    </LinearLayout>
+            android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:id="@+id/row2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".12">
+            <Button
+                android:id="@+id/buttonStoreInMemory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/buttonStoreInMemory"
+                android:theme="@style/MemoryButtonStyle"/>
 
-        <Button
-            android:id="@+id/buttonClearMemory"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".25"
-            android:text="@string/buttonClearMemory"
-            android:textSize="25sp"/>
+            <Button
+                android:id="@+id/buttonAddToMemory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/buttonAddToMemory"
+                android:theme="@style/MemoryButtonStyle"/>
 
-        <Button
-            android:id="@+id/buttonAddToMemory"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".25"
-            android:text="@string/buttonAddToMemory"
-            android:textSize="25sp"/>
+            <Button
+                android:id="@+id/buttonSubtractFromMemory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/buttonSubtractFromMemory"
+                android:theme="@style/MemoryButtonStyle"/>
 
-        <Button
-            android:id="@+id/buttonSubtractFromMemory"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".25"
-            android:text="@string/buttonSubtractFromMemory"
-            android:textSize="25sp"/>
+            <Button
+                android:id="@+id/buttonClearMemory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/buttonClearMemory"
+                android:theme="@style/MemoryButtonStyle"/>
 
-        <Button
-            android:id="@+id/buttonRecallMemory"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".25"
-            android:text="@string/buttonRecallMemory"
-            android:textSize="25sp"/>
-    </LinearLayout>
+            <Button
+                android:id="@+id/buttonRecallMemory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/buttonRecallMemory"
+                android:theme="@style/MemoryButtonStyle"/>
+        </TableRow>
 
-    <LinearLayout
-        android:id="@+id/row3"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".12">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/buttonClear"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".25"
-            android:text="@string/buttonClear"
-            android:textSize="25sp"/>
+            <Button
+                android:id="@+id/buttonClear"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/buttonClear"
+                android:theme="@style/FunctionButtonStyle"/>
 
-        <Button
-            android:id="@+id/buttonToggleSign"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".25"
-            android:text="@string/buttonToggleSign"
-            android:textSize="25sp"/>
+            <Button
+                android:id="@+id/buttonPercent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="false"
+                android:text="@string/buttonPercent"
+                android:theme="@style/FunctionButtonStyle"/>
 
-        <Button
-            android:id="@+id/buttonDivide"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".25"
-            android:text="@string/buttonDivide"
-            android:textSize="25sp"/>
+            <Button
+                android:id="@+id/buttonToggleSign"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/buttonToggleSign"
+                android:theme="@style/FunctionButtonStyle"/>
 
-        <Button
-            android:id="@+id/buttonMultiply"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".25"
-            android:text="@string/buttonMultiply"
-            android:textSize="25sp"/>
-    </LinearLayout>
+            <Button
+                android:id="@+id/buttonDivide"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/buttonDivide"
+                android:theme="@style/FunctionButtonStyle"/>
+        </TableRow>
 
-    <LinearLayout
-        android:id="@+id/row4"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".12">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/button7"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".25"
-            android:text="@string/button7"
-            android:textSize="25sp"/>
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/button7"/>
 
-        <Button
-            android:id="@+id/button8"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".25"
-            android:text="@string/button8"
-            android:textSize="25sp"/>
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/button8"/>
 
-        <Button
-            android:id="@+id/button9"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".25"
-            android:text="@string/button9"
-            android:textSize="25sp"/>
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/button9"/>
 
-        <Button
-            android:id="@+id/buttonSubtract"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".25"
-            android:text="@string/buttonSubtract"
-            android:textSize="25sp"/>
-    </LinearLayout>
+            <Button
+                android:id="@+id/buttonMultiply"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/buttonMultiply"
+                android:theme="@style/FunctionButtonStyle"/>
+        </TableRow>
 
-    <LinearLayout
-        android:id="@+id/row5"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".12">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".25"
-            android:text="@string/button4"
-            android:textSize="25sp"/>
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/button4"/>
 
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".25"
-            android:text="@string/button5"
-            android:textSize="25sp"/>
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/button5"/>
 
-        <Button
-            android:id="@+id/button6"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".25"
-            android:text="@string/button6"
-            android:textSize="25sp"/>
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/button6"/>
 
-        <Button
-            android:id="@+id/buttonAdd"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".25"
-            android:text="@string/buttonAdd"
-            android:textSize="25sp"/>
-    </LinearLayout>
+            <Button
+                android:id="@+id/buttonSubtract"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/buttonSubtract"
+                android:theme="@style/FunctionButtonStyle"/>
+        </TableRow>
 
-    <LinearLayout
-        android:id="@+id/row6"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".24"
-        android:baselineAligned="false">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".75"
-            android:orientation="vertical">
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/button1"/>
 
-            <LinearLayout
-                android:id="@+id/linearLayout1"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight=".50"
-                android:textSize="25sp">
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/button2"/>
 
-                <Button
-                    android:id="@+id/button1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight=".33"
-                    android:text="@string/button1"
-                    android:textSize="25sp"/>
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/button3"/>
 
-                <Button
-                    android:id="@+id/button2"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight=".33"
-                    android:text="@string/button2"
-                    android:textSize="25sp"/>
+            <Button
+                android:id="@+id/buttonAdd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/buttonAdd"
+                android:theme="@style/FunctionButtonStyle"/>
+        </TableRow>
 
-                <Button
-                    android:id="@+id/button3"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight=".34"
-                    android:text="@string/button3"
-                    android:textSize="25sp"/>
-            </LinearLayout>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            <LinearLayout
-                android:id="@+id/linearLayout2"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight=".50">
 
-                <Button
-                    android:id="@+id/button0"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight=".66"
-                    android:text="@string/button0"
-                    android:textSize="25sp"/>
+            <Button
+                android:id="@+id/button0"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/button0"/>
 
-                <Button
-                    android:id="@+id/buttonDecimalPoint"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight=".34"
-                    android:text="@string/buttonDecimalPoint"
-                    android:textSize="25sp"/>
-            </LinearLayout>
-        </LinearLayout>
+            <Button
+                android:id="@+id/buttonDecimalPoint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/buttonDecimalPoint"/>
 
-        <Button
-            android:id="@+id/buttonEquals"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".25"
-            android:text="@string/buttonEquals"
-            android:textSize="25sp"/>
-    </LinearLayout>
-
-</LinearLayout>
+            <Button
+                android:id="@+id/buttonEquals"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/buttonEquals"
+                android:theme="@style/FunctionButtonStyle"/>
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>

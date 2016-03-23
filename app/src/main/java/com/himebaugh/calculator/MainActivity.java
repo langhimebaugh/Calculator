@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
         mCalculatorBrain = new CalculatorBrain();
 
-        mCalculatorDisplay = (TextView) findViewById(R.id.textView1);
+        mCalculatorDisplay = (TextView) findViewById(R.id.textViewDisplay);
 
         df.setMinimumFractionDigits(0);
         df.setMinimumIntegerDigits(1);

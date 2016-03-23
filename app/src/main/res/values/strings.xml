@@ -19,6 +19,7 @@
     <string name="buttonDecimalPoint">.</string>
     <string name="buttonEquals">=</string>
     <string name="buttonClear">C</string>
+    <string name="buttonStoreInMemory">MS</string>
     <string name="buttonClearMemory">MC</string>
     <string name="buttonAddToMemory">M+</string>
     <string name="buttonSubtractFromMemory">M-</string>
@@ -26,6 +27,7 @@
     <string name="buttonSquareRoot">√</string>
     <string name="buttonSquared">x²</string>
     <string name="buttonInvert">1/x</string>
+    <string name="buttonPercent">%</string>
     <string name="buttonSine">sin</string>
     <string name="buttonCosine">cos</string>
     <string name="buttonTangent">tan</string>
