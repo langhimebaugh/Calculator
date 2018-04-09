@@ -11,27 +11,27 @@ public class CalculatorBrain {
     private double mCalculatorMemory;
 
     // operator types
-    public static final String ADD = "+";
-    public static final String SUBTRACT = "-";
-    public static final String MULTIPLY = "*";
-    public static final String DIVIDE = "/";
+    private static final String ADD = "+";
+    private static final String SUBTRACT = "-";
+    private static final String MULTIPLY = "*";
+    private static final String DIVIDE = "/";
 
-    public static final String CLEAR = "C";
-    public static final String CLEARMEMORY = "MC";
-    public static final String ADDTOMEMORY = "M+";
-    public static final String SUBTRACTFROMMEMORY = "M-";
-    public static final String RECALLMEMORY = "MR";
-    public static final String SQUAREROOT = "√";
-    public static final String SQUARED = "x²";
-    public static final String INVERT = "1/x";
-    public static final String TOGGLESIGN = "+/-";
-    public static final String SINE = "sin";
-    public static final String COSINE = "cos";
-    public static final String TANGENT = "tan";
+    private static final String CLEAR = "C";
+    private static final String CLEARMEMORY = "MC";
+    private static final String ADDTOMEMORY = "M+";
+    private static final String SUBTRACTFROMMEMORY = "M-";
+    private static final String RECALLMEMORY = "MR";
+    private static final String SQUAREROOT = "√";
+    private static final String SQUARED = "x²";
+    private static final String INVERT = "1/x";
+    private static final String TOGGLESIGN = "+/-";
+    private static final String SINE = "sin";
+    private static final String COSINE = "cos";
+    private static final String TANGENT = "tan";
     // public static final String EQUALS = "=";
 
     // constructor
-    public CalculatorBrain() {
+    protected CalculatorBrain() {
         // initialize variables upon start
         mOperand = 0;
         mWaitingOperand = 0;
@@ -114,7 +114,7 @@ public class CalculatorBrain {
         return mOperand;
     }
 
-    protected void performWaitingOperation() {
+    private void performWaitingOperation() {
 
         switch (mWaitingOperator) {
             case ADD:
